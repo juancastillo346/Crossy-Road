@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "author": "Gustaw Szymanski",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0.6, "left": -0.6, "attrs": {} },
+    {
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": 214.34,
+      "left": 249.83,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    {
+      "type": "wokwi-analog-joystick",
+      "id": "joystick1",
+      "top": 85.8,
+      "left": 389.4,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "oled1:GND", "uno:GND.2", "limegreen", [ "v0" ] ],
+    [ "oled1:VCC", "uno:5V", "magenta", [ "v0" ] ],
+    [ "oled1:SCL", "uno:A5", "green", [ "v0" ] ],
+    [ "oled1:SDA", "uno:A4", "gold", [ "v0" ] ],
+    [ "uno:GND.3", "joystick1:GND", "black", [ "v0" ] ],
+    [ "joystick1:SEL", "uno:A2", "cyan", [ "v0" ] ],
+    [ "joystick1:HORZ", "uno:A0", "yellow", [ "v0" ] ],
+    [ "joystick1:VERT", "uno:A1", "purple", [ "v0" ] ],
+    [ "joystick1:VCC", "uno:3.3V", "red", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
